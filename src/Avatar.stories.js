@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Avatar } from "./Avatar";
-
+// 7b7f459fa18d
 export default {
   title: "Design System/Avatar",
   component: Avatar,
