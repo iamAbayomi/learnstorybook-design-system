@@ -8,12 +8,12 @@ import { GlobalStyle } from '../src/shared/global'
  */
 
 export const decorators = [
-  Story => {
+  Story => (
     <>
     <GlobalStyle />
     <Story/>
     </>
-  }
+  )
 ]
 
 

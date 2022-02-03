@@ -1,3 +1,4 @@
+import { userEvent, within } from '@storybook/testing-library';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -16,6 +17,9 @@ const CustomButton = styled.button`
 function ButtonWrapper(props) {
   return <CustomButton {...props}/>;
 }
+
+// export const buttonWrapper = (args) 
+//   return <CustomButton {...props} />
 
 export default {
   title: 'Design System/Button',
@@ -290,3 +294,23 @@ export const AnchorWrapper = (args) => (
 );
 
 AnchorWrapper.storyName= 'anchor wrapper';
+
+// New story using the play functions
+export const withInteractions = () =>(
+    <Button 
+      ButtonWrapper ={StoryLinkWrapper}
+      appearance = "primary"
+      href="http://storybook.js.org"
+    >
+      Button
+    </Button>
+)
+
+withInteractions.play = async ({ canvasElement }) => {
+   // Assigns canvas to the component root element
+   const canvas = within(canvasElement)
+   await userEvent.click(canvas.getByRole("link"))
+}
+
+
+withInteractions.storyName = "button with interactions"
