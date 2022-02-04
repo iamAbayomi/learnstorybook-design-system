@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { color, typography } from './shared/styles';
 import { glow } from './shared/animation';
 import { Icon } from './Icon';
-//"chromatic": "npx chromatic --project-token=7b7f459fa18d"
+
 export const sizes = {
   large: 40,
   medium: 28,
